@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Basket
+{% endblock %}
+
+{% block head %}
+    <script src="{{ url_for('cart.static', filename='js/save_cookies.js') }}" defer></script>
+
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename= '/css/cart.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="already-auth">
+        <div class="pages">
+            <a href="/">HOME</a>
+            <a href="/shop/" class="shop-page">SHOP</a>
+            <a href="/cart/">CART</a>
+            <a href="/contacts/">CONTACTS</a>
+            {% if valuetf %}
+                <div class="cart-value">
+                    <h3>{{value1}}</h3>
+                </div>
+            {% endif %}
+        </div> 
+        <h2>{{user}}</h2>
+    </div>
+    <div class="basket-menu">
+        <div class="basket-of-products">
+            {% for product in products %}
+                {% if product[1] == "iPhone" %}
+                    <div class="product-in-basket">
+                        <img src="{{ url_for('shop.static', filename= '/imgs/iPhoneTitanic.png') }}">
+        
+                        <h1 class="name-of-product">iPhone 15 Pro Max 256GB Natural Titanium</h1>
+                        <div class="counter-of-product">
+                            <p class="minus-count">-</p>
+                            <p class="count-of-product">{{ product[0] }}</p>
+                            <p class="plus-count">+</p>
+                        </div>
+        
+                        <p class="price-of-product">49 999 грн</p>
+                    </div>
+                {% elif product[1] == "Vivo" %}
+                    <div class="product-in-basket">
+                        <img src="{{ url_for('shop.static', filename= '/imgs/VivoV9.png') }}">
+        
+                        <h1 class="name-of-product">iPhone 15 Pro Max 256GB Natural 123213Titanium</h1>
+                        <div class="counter-of-product">
+                            <p class="minus-count">-</p>
+                            <p class="count-of-product">{{ product[0] }}</p>
+                            <p class="plus-count">+</p>
+                        </div>
+        
+                        <p class="price-of-product">4 999 грн</p>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+
+
+        </div>
+        <div class="total-price">
+
+        </div>
+    </div>
+{% endblock %}
+

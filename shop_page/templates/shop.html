@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-login
+Shop
 {% endblock %}
 
 {% block head %}
-    <!-- <script src="{{ url_for('shop.static', filename='js/save_cookies.js') }}" defer></script> -->
+    <script src="{{ url_for('shop.static', filename='js/save_cookies.js') }}" defer></script>
     <link rel="stylesheet" href="{{ url_for('shop.static', filename= '/css/shop.css') }}">
 {% endblock %}
 
@@ -13,11 +13,11 @@ login
     <div class="already-auth">
         <div class="pages">
             <a href="/">HOME</a>
-            <a href="/shop/" class="shop-page">SHOP</a>
-            <a href="/basket/">BASKET</a>
+            <a href="/shop/" class="on-page">SHOP</a>
+            <a href="/cart/">CART</a>
             <a href="/contacts/">CONTACTS</a>
             {% if valuetf %}
-                <div class="basket-value">
+                <div class="cart-value">
                     <h3>{{value1}}</h3>
                 </div>
             {% endif %}

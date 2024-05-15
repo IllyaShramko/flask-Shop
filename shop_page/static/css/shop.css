@@ -14,7 +14,7 @@ a{
     display: flex;
     align-items: center;
     text-align: right;
-    text-decoration-line: underline;
+    text-decoration-line: none;
     text-transform: uppercase;
 
     color: #000000;
@@ -510,7 +510,7 @@ button{
 }
 
 
-.basket-value{
+.cart-value{
     /* Ellipse 1 */
 
     box-sizing: border-box;
@@ -555,5 +555,32 @@ h3{
     flex-grow: 0;
     z-index: 5;
 
+
+}
+.on-page{
+    
+    /* Registration */
+
+    width: 190px;
+    height: 33px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 
 }
