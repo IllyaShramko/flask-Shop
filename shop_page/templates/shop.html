@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-login
+Shop
 {% endblock %}
 
 {% block head %}
-    <!-- <script src="{{ url_for('shop.static', filename='js/save_cookies.js') }}" defer></script> -->
+    <script src="{{ url_for('shop.static', filename='js/save_cookies.js') }}" defer></script>
     <link rel="stylesheet" href="{{ url_for('shop.static', filename= '/css/shop.css') }}">
 {% endblock %}
 
@@ -13,11 +13,11 @@ login
     <div class="already-auth">
         <div class="pages">
             <a href="/">HOME</a>
-            <a href="/shop/" class="shop-page">SHOP</a>
-            <a href="/basket/">BASKET</a>
+            <a href="/shop/" class="on-page">SHOP</a>
+            <a href="/cart/">CART</a>
             <a href="/contacts/">CONTACTS</a>
             {% if valuetf %}
-                <div class="basket-value">
+                <div class="cart-value">
                     <h3>{{value1}}</h3>
                 </div>
             {% endif %}
@@ -30,8 +30,18 @@ login
             <div class="description">
                 <!--  -->
                 <p class="title">iPhone 15 Pro Max 256GB Natural Titanium</p>
-                <p class="cost">49 999 грн</p>
+                <button class="edit-title"><img class="edit-title-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
                 <!--  -->
+                <p class="cost-original">49 999 грн</p>
+                <button class="edit-price"><img class="edit-price-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
+                <p class="discount">Знижка 10%</p>
+                <button class="edit-discount"><img class="edit-discount-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
+                <p class="total-cost">40 009 грн</p>
+                <!--  -->
+
                 
                 <form method="post">
                     <button type="submit" id="1" class="buy">КУПИТИ</button>
@@ -57,7 +67,15 @@ login
             <div class="description">
                 <!--  -->
                 <p class="title">SmartPhone Vivo V9 2018 Cup</p>
-                <p class="cost">4 999 грн</p>
+                <button class="edit-title"><img class="edit-title-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
+                <p class="cost-original">4 999 грн</p>
+                <button class="edit-price"><img class="edit-price-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
+                <p class="discount">Знижка 15%</p>
+                <button class="edit-discount"><img class="edit-discount-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
+                
+                <p class="total-cost">3 095 грн</p>
                 <!--  -->
                 
                 <form method="post">

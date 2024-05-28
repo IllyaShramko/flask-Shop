@@ -1,5 +1,5 @@
 from .settings import project
-import home_page, registration_page, login_page, shop_page
+import home_page, registration_page, login_page, shop_page, cart_page
 
 home_page.home_page.add_url_rule(
     rule = "/",
@@ -29,3 +29,10 @@ shop_page.shop_page.add_url_rule(
     methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint= shop_page.shop_page)
+
+cart_page.cart_page.add_url_rule(
+    rule= "/cart/",
+    view_func= cart_page.render_cart_page,
+    methods = ["GET", "POST"]
+)
+project.register_blueprint(blueprint= cart_page.cart_page)
