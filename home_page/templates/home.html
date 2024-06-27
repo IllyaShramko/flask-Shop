@@ -27,6 +27,9 @@ Home
                 <a href="/shop/">SHOP</a>
                 <a href="/cart/">CART</a>
                 <a href="/contacts/">CONTACTS</a>
+                {% if is_admin %}
+                    <a href="/admin/">ADMIN</a>
+                {% endif %}
             </div> 
             <h2>{{user}}</h2>
         </div>

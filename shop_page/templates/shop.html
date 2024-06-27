@@ -16,6 +16,9 @@ Shop
             <a href="/shop/" class="on-page">SHOP</a>
             <a href="/cart/">CART</a>
             <a href="/contacts/">CONTACTS</a>
+            {% if is_admin %}
+                <a href="/admin/">ADMIN</a>
+            {% endif %}
             {% if valuetf %}
                 <div class="cart-value">
                     <h3>{{value1}}</h3>
@@ -25,78 +28,44 @@ Shop
         <h2>{{user}}</h2>
     </div>
     <div class="products">
-        <div class="product">
-            <img src="{{ url_for('shop.static', filename= '/imgs/iPhoneTitanic.png') }}">
-            <div class="description">
-                <!--  -->
-                <p class="title">iPhone 15 Pro Max 256GB Natural Titanium</p>
-                <button class="edit-title"><img class="edit-title-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <!--  -->
-                <p class="cost-original">49 999 грн</p>
-                <button class="edit-price"><img class="edit-price-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <p class="discount">Знижка 10%</p>
-                <button class="edit-discount"><img class="edit-discount-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <p class="total-cost">40 009 грн</p>
-                <!--  -->
+        
+            {% for product in products %}
+                <div class="product">
+                        
+                    <img src="{{ url_for('shop.static', filename= '/imgs/' + product.name + '.png') }}">
+                    <div class="description">
+                        <!--  -->
+                        <p class="title">{{ product.name }}</p>
+                        
+                        <!--  -->
+                        <p class="cost-original">{{ product.price }} грн</p>
+                        
+                        <p class="discount">Знижка {{ product.discount }}%</p>
+                        
+                        <p class="total-cost">{{ product.price - int(product.price / 100 * product.discount) }} грн</p>
+                        <!--  -->
 
-                
-                <form method="post">
-                    <button type="submit" id="1" class="buy">КУПИТИ</button>
-                </form>
-                
-                <!--  -->
-                <p class="capacity">ЄМНІСТЬ:</p>
-                <!--  -->   
-                <div class="options-capacity">
-                    <p class="selected1">256 Гб</p>
-                    <p class="not-selected1">512 Гб</p>
-                    <p class="not-selected12">1 Tб</p>
-                    
-                    <div class="in-stock">
-                        <!-- <img src="{{ url_for('shop.static', filename= '/imgs/InStockConfirmed.png') }}" class="in-stock-img"> -->
-                        <p class="in-stock-p"></p>
+                        
+                        <form method="post">
+                            <button type="submit" id="1" class="buy">КУПИТИ</button>
+                        </form>
+                        
+                        <!--  -->
+                        <p class="capacity">ЄМНІСТЬ:</p>
+                        <!--  -->   
+                        <div class="options-capacity">
+                            <p class="selected1">{{product.capacity1}}</p>
+                            <p class="not-selected1">{{product.capacity2}}</p>
+                            <p class="not-selected12">{{product.capacity3}}</p>
+                            
+                            <div class="in-stock">
+                                <!-- <img src="{{ url_for('shop.static', filename= '/imgs/InStockConfirmed.png') }}" class="in-stock-img"> -->
+                                <p class="in-stock-p"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="product">
-            <img src="{{ url_for('shop.static', filename= '/imgs/VivoV9.png') }}">
-            <div class="description">
-                <!--  -->
-                <p class="title">SmartPhone Vivo V9 2018 Cup</p>
-                <button class="edit-title"><img class="edit-title-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <p class="cost-original">4 999 грн</p>
-                <button class="edit-price"><img class="edit-price-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <p class="discount">Знижка 15%</p>
-                <button class="edit-discount"><img class="edit-discount-img" src="{{ url_for('shop.static', filename= '/imgs/edit.png') }}"></button>
-                
-                <p class="total-cost">3 095 грн</p>
-                <!--  -->
-                
-                <form method="post">
-                    <button type="submit" id="2" class="buy">КУПИТИ</button>
-                </form>
-                
-                <!--  -->
-                <p class="capacity">ЄМНІСТЬ:</p>
-                <!--  -->   
-                <div class="options-capacity">
-                    <p class="selected1">64 Гб</p>
-                    <p class="not-selected1">128 Гб</p>
-                    <p class="not-selected12">256 гб</p>
-                    
-                    <div class="in-stock">
-                        <!-- <img src="{{ url_for('shop.static', filename= '/imgs/InStockConfirmed.png') }}" class="in-stock-img"> -->
-                        <p class="in-stock-p"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {% endfor %}
     </div>
 
 

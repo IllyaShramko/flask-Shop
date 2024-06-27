@@ -17,6 +17,12 @@ Basket
             <a href="/shop/" class="shop-page">SHOP</a>
             <a href="/cart/">CART</a>
             <a href="/contacts/">CONTACTS</a>
+            {% if is_admin %}
+                <a href="/admin/">ADMIN</a>
+            {% endif %}
+            
+
+
             {% if valuetf %}
                 <div class="cart-value1">
                     <h3 class="cart-value">0</h3>

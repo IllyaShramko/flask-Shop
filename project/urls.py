@@ -1,5 +1,5 @@
 from .settings import project
-import home_page, registration_page, login_page, shop_page, cart_page
+import home_page, registration_page, login_page, shop_page, cart_page, admin_page
 
 home_page.home_page.add_url_rule(
     rule = "/",
@@ -36,3 +36,10 @@ cart_page.cart_page.add_url_rule(
     methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint= cart_page.cart_page)
+
+admin_page.admin_page.add_url_rule(
+    rule= "/admin/",
+    view_func= admin_page.render_admin_page,
+    methods = ["GET", "POST"]
+)
+project.register_blueprint(blueprint= admin_page.admin_page)
