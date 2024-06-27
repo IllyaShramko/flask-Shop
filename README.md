@@ -1,4 +1,4 @@
-# Flask Shop
+# Project "Flask Shop"
 ### command structure / склад команди:
 - Illya Shramko / Ілля Шрамко [github.com/IllyaShramko](https://github.com/IllyaShramko)
 - Timur Koshel / Тимур Кошель [github.com/kosheltimur](https://github.com/kosheltimur)
