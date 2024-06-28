@@ -29,45 +29,24 @@ Basket
                 </div>
             {% endif %}
         </div> 
-        <!-- {% if valuetf %}
-            <div class="cart-value">
-                <h3>{{ count_of_products }}</h3>
-            </div>
-        {% endif %} -->
         <h2>{{user}}</h2>
     {% if check_basket %}
         </div>
             <div class="basket-menu">
                 <div class="basket-of-products">
                     {% for product in products %}
-                        {% if product[1] == "iPhone" %}
-                            <div class="product-in-basket">
-                                <img src="{{ url_for('shop.static', filename= '/imgs/iPhoneTitanic.png') }}">
-                
-                                <h1 class="name-of-product">iPhone 15 Pro Max 256GB Natural Titanium</h1>
-                                <div class="counter-of-product">    
-                                    <button class="minus-count" id="1">-</button>
-                                    <p class="count-of-product" id="1">{{ product[0] }}</p>
-                                    <button class="plus-count" id="1">+</button>
-                                </div>
-                
-                                <p class="price-of-product">49 999 грн</p>
+                        <div class="product-in-basket">
+                            <img src="{{ url_for('shop.static', filename= '/imgs/' + product + '.png') }}">
+            
+                            <h1 class="name-of-product">{{ product }}</h1>
+                            <div class="counter-of-product">    
+                                <button class="minus-count" id="1">-</button>
+                                <p class="count-of-product" id="1">0</p>
+                                <button class="plus-count" id="1">+</button>
                             </div>
-                        {% elif product[1] == "Vivo" %}
-                            <div class="product-in-basket">
-                                <img src="{{ url_for('shop.static', filename= '/imgs/VivoV9.png') }}">
-                
-                                <h1 class="name-of-product">SmartPhone Vivo V9</h1>
-                                <div class="counter-of-product">
-                                    <p class="count-of-product" id="2">{{ product[0] }}</p>
-                                    <button class="minus-count" id="2">-</button>
-                                    <button class="plus-count" id="2">+</button>
-                                </div>
-                
-                                <p class="price-of-product">4 999 грн</p>
-                            </div>
-
-                        {% endif %}
+            
+                            <p class="price-of-product">49 999 грн</p>
+                        </div>
                     {% endfor %}
 
                 </div>
@@ -92,8 +71,33 @@ Basket
                 <h4 class="total-price-p"></h4>
             </div>
         </div>
-        
-
+        <div class= "modal-window" style="display: none;">
+            <form method="post" enctype="multipart/form-data" class="modal-form" style="height: 1050px;">
+                <p class="title-order">оформлення замовлення</p>
+                <p class="name-order text-data-new">Ім'я:</p>
+                <input type="text" name="orderName" class="orderName">
+    
+                <p class="surname-order text-data-new">Прізвище:</p>
+                <input type="text" name="orderSurname"class="orderSurname">
+    
+                <p class="number-order text-data-new">Номер телефона замовника:</p>
+                <input type="text" name="orderNumber" class="orderNumber">
+                
+                <p class="email-order text-data-new">Email замовника:</p>
+                <input type="email" name="orderEmail" class="orderEmail">
+                
+                <p class="city-order text-data-new" >Місто отримувача:</p>
+                <input type="text" name="orderCity" class="orderCity">
+                
+                <p class="nova-poshta-order text-data-new">Відділення нової пошти:</p>
+                <input type="text" name="orderPoshta" class="orderPoshta">
+                
+                <p class="wishes-order text-data-new" >Додаткові побажання:</p>
+                <textarea type="text" name="orderWishes" class="orderWishes"></textarea>
+                
+                <button type="submit" name="submit-change" class="submit-change" value="">SEND</button>
+            </form>
+        </div>
     {% else %}
     <div class="basket-menu">
         <h1>Ваша корзина порожня...</h1>

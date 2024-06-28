@@ -121,3 +121,24 @@ counter_price()
 
 let count11 = document.cookie.split("=")
 cartValue.textContent = count11[1].split(' ').length
+
+
+
+
+let OrderButton = document.querySelector(".continie-order")
+OrderButton.addEventListener(
+    type = "click",
+    listener = (event) => {
+        document.querySelector('.modal-window').style.display = 'flex'
+
+        let elementsp = document.querySelectorAll(".text-data-new")
+        let y = 30
+        for (let count = 0; count < elementsp.length; count++) {
+            let element = elementsp[count]
+            element.style.display = "flex"
+            element.style.top = y
+            y += 125
+        }
+
+    }
+)

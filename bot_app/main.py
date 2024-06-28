@@ -160,3 +160,4 @@ def get_users(callback):
     database.commit()
     database.close()
     adding_new_product = False
+bot.infinity_polling()

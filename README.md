@@ -36,7 +36,6 @@ In terminal MacOS:
 ```
 pip3 install flask
 ```
-____
 #### 3. Library flask_sqlalchemy. this project needed for create and edit database / Модуль flask_sqlalchemy. цей модуль потрібен для створювання та керуванням базой даних, тому він обов'язковий
 
 In console Windows:
@@ -94,8 +93,6 @@ In terminal MacOS:
 pip3 install telebot
 ```
 ____
-#### 9. Library threading. This library needed for run many infinity loops, but you unneed in installation, since it is installed by default / Модуль threading. Цей модуль потрібен для запуску декілька безкінцевих циклів, але його не потрібно встановлювати, так як він за замовчуванням встановлен
-____
 #### Installing all of the libraries, which needed for install for run project / Встановлення всіх модулів, які потребують встановлення для старту проекту
 In console Windows:
 ```
@@ -107,3 +104,101 @@ pip3 install flask flask_migrate flask_login flask_mail flask_sqlalchemy telebot
 ```
 
 # Main Structure of project / Основна структура проекту:
+```mermaid
+graph TD;
+    flask_shop-->project;
+    flask_shop-->home_page;
+    flask_shop-->login_page;
+    flask_shop-->registration_page;
+    flask_shop-->shop_page;
+    flask_shop-->cart_page;
+    flask_shop-->admin_page;
+    flask_shop-->bot_app;
+    
+    
+    project-->templates;
+    project-->login_manager.py;
+    project-->__init__.py;
+    project-->settings.py;
+    project-->urls.py;
+    project-->flask_config.py;
+    templates-->base.html;
+
+    home_page-->home_page/templates;
+    home_page/static-->home_page/css;
+    home_page-->home_page/__init__.py;
+    home_page-->home_page/app.py;
+    home_page-->home_page/views.py;
+    home_page/templates-->home.html;
+    home_page-->home_page/static;
+    home_page/static-->home_page/css;
+    home_page/css-->home.css;
+
+    shop_page/static-->shop_page/js;
+    shop_page/static-->shop_page/imgs;
+    shop_page-->shop_page/__init__.py;
+    shop_page-->shop_page/app.py;
+    shop_page-->shop_page/views.py;
+    shop_page-->shop_page/models.py;
+    shop_page-->shop_page/templates;
+    shop_page/templates-->shop.html;
+    shop_page/static-->shop_page/js;
+    shop_page/js-->save_cookies.js;
+    shop_page-->shop_page/static;
+    shop_page/static-->shop_page/css;
+    shop_page/css-->shop_page/shop.css;
+
+    registration_page-->registration_page/__init__.py;
+    registration_page-->registration_page/app.py;
+    registration_page-->rigistration_page/views.py;
+    registration_page-->registration_page/templates;
+    registration_page/templates-->registration.html;
+    registration_page-->registration_page/static
+    registration_page/static-->registration_page/css;
+    registration_page/css-->register.css;
+
+    login_page-->login_page/templates;
+    login_page-->login_page/__init__.py;
+    login_page-->login_page/app.py;
+    login_page-->login_page/views.py;
+    login_page/templates-->login.html;
+    login_page-->login_page/static;
+    login_page/static-->login_page/css;
+    login_page/css-->login.css
+    
+    cart_page-->cart_page/templates;
+    cart_page/static-->cart_page/css;
+    cart_page/static-->cart_page/js;
+    cart_page/static-->cart_page/imgs;
+    cart_page-->cart_page/__init__.py;
+    cart_page-->cart_page/app.py;
+    cart_page-->cart_page/views.py;
+    cart_page/templates-->cart.html;
+    cart_page-->cart_page/static;
+    cart_page/css-->cart.css;
+    cart_page/static-->cart_page/js;
+    cart_page/js-->write_cookeies.js;
+
+    bot_app-->main;
+
+    admin_page-->admin_page/templates;
+    admin_page/static-->admin_page/css;
+    admin_page/static-->admin_page/js;
+    admin_page-->admin_page/__init__.py;
+    admin_page-->admin_page/app.py;
+    admin_page-->admin_page/views.py;
+    admin_page/templates-->admin.html;
+    admin_page/static-->admin_page/edit.js;
+    admin_page-->admin_page/static;
+    admin_page/static-->admin_page/css;
+    admin_page/css-->admin.css;
+
+    flask-Shop-main-->manage.py;
+
+
+
+
+
+
+
+``` 
