@@ -68,20 +68,6 @@ def render_admin_page():
                         image_save.save(os.path.abspath(__file__ + f"/../../shop_page/static/imgs/{new_product.name}.png"))
         except Exception as e:
             print(e)
-            print(flask.request.form)
-
-    # if len(Product.query.all()) == 0:
-    #     for product_data in products1:
-    #         product = Product(
-    #             name = product_data['name'],
-    #             price = product_data['price'],
-    #             discount = product_data['discount'],
-    #             capacity1 = product_data['capacity1'],
-    #             capacity2 = product_data['capacity2'],
-    #             capacity3 = product_data['capacity3']
-    #         )
-    #         DATABASE.session.add(product)
-    #     DATABASE.session.commit()
     is_admin = flask_login.current_user.is_admin
 
     return flask.render_template(

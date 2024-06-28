@@ -99,9 +99,6 @@ NewProductButton.addEventListener(
         for (let count = 0; count < elements.length; count++) {
             let element = elements[count]
             element.style.display = "flex"
-            // if (element.type == "file") {
-            //     element.accept = "image/*"
-            // }
         }
         
         let elementsp = document.querySelectorAll(".text-data-new")
@@ -110,7 +107,6 @@ NewProductButton.addEventListener(
             let element = elementsp[count]
             element.style.display = "flex"
             element.style.top = y
-            // element.style.left = 20
             y += 109
         }
         document.querySelector('.submit-change').value = `newProduct-0`

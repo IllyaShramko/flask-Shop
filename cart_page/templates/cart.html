@@ -36,26 +36,19 @@ Basket
                 <div class="basket-of-products">
                     {% for product in products %}
                         <div class="product-in-basket">
-                            <img src="{{ url_for('shop.static', filename= '/imgs/' + product + '.png') }}">
-            
-                            <h1 class="name-of-product">{{ product }}</h1>
+                            <img src="{{ url_for('shop.static', filename= '/imgs/' + product[1] + '.png') }}">
+                            <h1 class="name-of-product">{{ product[-1] }}</h1>
                             <div class="counter-of-product">    
                                 <button class="minus-count" id="1">-</button>
                                 <p class="count-of-product" id="1">0</p>
                                 <button class="plus-count" id="1">+</button>
                             </div>
-            
-                            <p class="price-of-product">49 999 грн</p>
+                            <p class="price-of-product">{{ product[2] }}</p>
                         </div>
                     {% endfor %}
-
                 </div>
             </div>
-
         </div>
-
-
-        
         <div class = "order">
             <button class="continie-order">Перейти до оформлення</button>
             <div class="original-price">

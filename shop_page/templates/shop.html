@@ -33,35 +33,19 @@ Shop
                 <div class="product">
                         
                     <img src="{{ url_for('shop.static', filename= '/imgs/' + product.name + '.png') }}">
-                    <div class="description">
-                        <!--  -->
+                    <div class="description">                        
                         <p class="title">{{ product.name }}</p>
-                        
-                        <!--  -->
                         <p class="cost-original">{{ product.price }} грн</p>
-                        
                         <p class="discount">Знижка {{ product.discount }}%</p>
-                        
                         <p class="total-cost">{{ product.price - int(product.price / 100 * product.discount) }} грн</p>
-                        <!--  -->
-
-                        
                         <form method="post">
                             <button type="submit" id="{{product.id}}" class="buy">КУПИТИ</button>
                         </form>
-                        
-                        <!--  -->
-                        <p class="capacity">ЄМНІСТЬ:</p>
-                        <!--  -->   
+                        <p class="capacity">ЄМНІСТЬ:</p>                           
                         <div class="options-capacity">
                             <p class="selected1">{{product.capacity1}}</p>
                             <p class="not-selected1">{{product.capacity2}}</p>
                             <p class="not-selected12">{{product.capacity3}}</p>
-                            
-                            <div class="in-stock">
-                                <!-- <img src="{{ url_for('shop.static', filename= '/imgs/InStockConfirmed.png') }}" class="in-stock-img"> -->
-                                <p class="in-stock-p"></p>
-                            </div>
                         </div>
                     </div>
                 </div>
