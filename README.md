@@ -5,7 +5,7 @@
 - Egor Galkin / Єгор Галкін [github.com/EgorGalkinORG](https://github.com/EgorGalkinORG)
 - David Petrenko / Давид Петренко [github.com/Davidptn](https://github.com/Davidptn)
 ____
-# Main Information of project / Основна Інформація про проект:
+## Main Information of project / Основна Інформація про проект:
 ### Flask Shop project can do / Flask Shop project може робити:
 - Start up / Запускатися
 - Process Authorizations, Registrations and record them in the database / Опрацьовувати Авторизації, Реєстрації та записувати їх у базі даних
